@@ -67,9 +67,13 @@
 
               </mat-toolbar>
 
+
+              <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row>
+
           <mat-toolbar-row *ngIf="loginFormShow">
         <!-- ON PRESS LOGIN BUTTON OPENING LOGIN FORM ON BIG SCREEN -->
         <div>
+
           <form *ngIf="loginFormShow" [formGroup]="logInFrom" (ngSubmit)="onSignin()" >
             <mat-form-field>
                 
@@ -87,6 +91,9 @@
         </div>
 
               </mat-toolbar-row>
+
+              <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row>
+
 
 
               

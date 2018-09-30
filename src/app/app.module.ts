@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AngularCustomMaterialModule } from './core/angularCustomMaterial.module';
-import { AuthModule } from './auth/auth-module';
 import { GalleryRouterModule } from './gallery/gallery-routing.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { StoreModule, StoreRootModule } from '@ngrx/store';
@@ -37,7 +36,6 @@ import { AuthEffects } from './auth/store/auth.effects';
     
     GalleryModule,
     CoreModule,
-    AuthModule,
     SharedModule,
 
     StoreModule.forRoot(reducers),
