@@ -1,0 +1,94 @@
+
+
+<div  class="mat-elevation-z10">
+        <mat-toolbar >
+                <!-- Adding snake icon and first element -->
+                <span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Snake_icon.svg" 
+                    width="30" height="30" class="d-inline-block align-top" 
+                    alt=""> Полоз.Сом</span>
+              
+      <!-- TWO BUTTONS SHOWING ONLY ON THE BIG SCREENS -->
+      <nav mat-tab-nav-bar fxHide fxShow.gt-sm>
+          <a mat-tab-link routerLink="/" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" [routerLinkActiveOptions]="{ exact: true }"  >Главная   <mat-icon>home</mat-icon></a>
+          <a mat-tab-link routerLink="mysnakes" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive" >Мои Змеи<mat-icon>photo_album</mat-icon></a>
+      </nav >
+      <!-- SPACE TO MOVE LOGIN AND MENU BUTTON TO THE RIGHT -->
+      <div class="flex-spacer"></div>
+
+      <!-- LOGIN BUTTON -->
+      <div *ngIf="!(authState | async).authenticated" fxHide fxShow.gt-sm>
+          <nav mat-tab-nav-bar >
+              <a mat-tab-link (click)="onLogin()">Логин<mat-icon>person_add_disabled</mat-icon></a>
+          </nav>
+        </div>
+
+        
+
+
+
+      <!-- IF AUTHENTICATED IS TRUE, SHOW LOGOUT BUTTON -->
+      <div *ngIf="(authState | async).authenticated" fxHide fxShow.gt-sm>
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link routerLink="/" (click)="onLogout()" >Выйти<mat-icon>photo_album</mat-icon></a>
+        </nav>
+      </div>
+      <!-- DROPDOWN MENU FOR SMALL SCREENS -->
+      <div fxHide fxShow.lt-md >
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                      <mat-icon>{{ menuIcon }}</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item routerLink="/">                            
+                        <mat-icon>home</mat-icon>
+                        <span>Главная</span>
+                      </button>
+                      <button mat-menu-item routerLink="mysnakes">
+                        <mat-icon>photo_album</mat-icon>
+                        <span>Мои Змеи</span>
+                      </button>
+                      <mat-divider></mat-divider>
+          
+                      <div *ngIf="!(authState | async).authenticated">
+                      <button mat-menu-item routerLink="/" (click)="onLogin()">
+                          <mat-icon>exit_to_app</mat-icon>
+                          <span>Логин</span>
+                       </button>
+                      </div>
+
+                      <div *ngIf="(authState | async).authenticated">
+                              <button mat-menu-item (click)="onLogout()">
+                                  <mat-icon>close</mat-icon>
+                                  <span>Выйти</span>
+                               </button>
+                      </div>
+                    </mat-menu>
+      </div>
+
+              </mat-toolbar>
+
+          <mat-toolbar-row *ngIf="loginFormShow">
+        <!-- ON PRESS LOGIN BUTTON OPENING LOGIN FORM ON BIG SCREEN -->
+        <div>
+          <form *ngIf="loginFormShow" [formGroup]="logInFrom" (ngSubmit)="onSignin()" >
+            <mat-form-field>
+                
+                <input matInput  type="email" placeholder="e-mail" formControlName="email" id="email">
+            </mat-form-field>
+
+            <br fxHide fxShow.lt-md>
+            <mat-form-field>
+            <input matInput  type="password" placeholder="Пароль" formControlName="password" id="password">
+            </mat-form-field>
+            
+            
+            <button type="submit">Войти</button>
+          </form>
+        </div>
+
+              </mat-toolbar-row>
+
+
+              
+</div>
+

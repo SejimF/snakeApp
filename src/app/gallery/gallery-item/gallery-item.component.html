@@ -1,0 +1,42 @@
+
+        <mat-card *ngIf="!edit_mode">
+
+                <mat-card-title>
+                    <span *ngIf="!edit_mode">  {{ photo.title }} </span>
+                    <span *ngIf="edit_mode"> <label for="title">Enter Name:</label> <input type="title" name="title" placeholder="Enter the name" value="{{photo.title}}">  </span>  
+                   
+                    <div *ngIf="(authState | async).authenticated" >
+                            <button (click)="onDelete(photo.pushKey)" ><mat-icon>delete_forever</mat-icon></button>
+                            <button (click)="onEdit()" ><mat-icon>edit</mat-icon></button>
+                    </div>
+
+                
+                </mat-card-title>
+        
+            <img mat-card-image src="{{ photo.imageUrl }}" alt="{{ photo.title }}">
+        
+            <mat-card-content>
+                {{ photo.description }}   
+              </mat-card-content>
+
+        </mat-card>
+
+        <mat-card *ngIf="edit_mode">
+                <form [formGroup]="photoForm" (ngSubmit)="submitNewPhoto()">
+                        <div>
+                          <label for="title">Название</label>
+                          <input formControlName="title" [(ngModel)]="photo.title"  id="title" type="text">
+                        </div>
+                        <div>
+                          <label for="imageUrl">Адрес Фотографии</label>
+                          <input formControlName="imageUrl" [(ngModel)]="photo.imageUrl" id="imageUrl" type="text" #imagePath>
+                        </div>
+                          <img mat-card-image [src]="imagePath.value">                        
+                        <div>
+                          <label for="description">Описание</label>
+                          <textarea formControlName="description" [(ngModel)]="photo.description" name="description" id="description" cols="10" rows="5"></textarea>
+                        </div>
+                        <button type="submit"><mat-icon>done</mat-icon></button>
+                      </form>
+        </mat-card>
+

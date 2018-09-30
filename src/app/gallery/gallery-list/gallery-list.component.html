@@ -1,0 +1,22 @@
+
+<button *ngIf="( authState | async ).authenticated" (click)="logIn()">Добавить Фото</button>
+
+<div *ngIf="logdIn">
+    <app-gallery-add-photo></app-gallery-add-photo>
+    <mat-divider></mat-divider>
+</div>
+
+
+<!-- This is main loop for cards of photos in flex style -->
+<div  fxLayout="row wrap" fxLayout.lg-xs="column" fxLayoutGap="4% grid" fxLayoutAlign="space-evenly center">
+      <app-gallery-item
+      [fxFlex.xs]="dicideOnAountInRow('xs')"   
+      [fxFlex.sm]="dicideOnAountInRow('sm')"   
+      [fxFlex.md]="dicideOnAountInRow('md')"   
+      [fxFlex.lg]="dicideOnAountInRow('lg')"   
+      [fxFlex.gt-lg]="dicideOnAountInRow('gt-lg')"
+      
+      *ngFor="let photo of (photoState | async).photos" [photo]="photo" ></app-gallery-item>
+
+</div>
+

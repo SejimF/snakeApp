@@ -1,0 +1,23 @@
+#linkText{
+    color: white
+}
+
+.active{
+    margin-bottom: -1rem;
+    background-color: white;
+    color: black !important
+}
+
+.navbar-nav > li > a:link
+{
+color:red;
+}
+
+ .flex-spacer{
+    flex-grow: 1; 
+}
+
+.mat-elevation-z10 {
+    position: sticky;
+    z-index: 2;
+}
