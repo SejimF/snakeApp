@@ -1,3 +1,5 @@
+To work Required to have src\environments\environment.ts and src\environments\environment.prod.ts whith your firebase information 
+
 # SnakeApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
