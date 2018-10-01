@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, RequiredValidator, Validators } from '@angular/forms';
 import * as fromApp from '../../store/app.reducers'
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -28,8 +28,8 @@ export class HeaderComponent implements OnInit {
   onLogin() {
     this.loginFormShow = !this.loginFormShow;
     this.logInFrom = new FormGroup({
-      'email': new FormControl(null),
-      'password': new FormControl(null)
+      'email': new FormControl(null, Validators.required),
+      'password': new FormControl(null, Validators.required)
     })
   }
 

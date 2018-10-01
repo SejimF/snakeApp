@@ -1,5 +1,5 @@
 
-<button *ngIf="( authState | async ).authenticated" (click)="logIn()">Добавить Фото</button>
+<button mat-raised-button color="primary" *ngIf="( authState | async ).authenticated" (click)="logIn()">Добавить Фото</button>
 
 <div *ngIf="logdIn">
     <app-gallery-add-photo></app-gallery-add-photo>

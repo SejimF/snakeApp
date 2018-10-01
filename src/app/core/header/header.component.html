@@ -19,7 +19,7 @@
       <!-- LOGIN BUTTON -->
       <div *ngIf="!(authState | async).authenticated" fxHide fxShow.gt-sm>
           <nav mat-tab-nav-bar >
-              <a mat-tab-link (click)="onLogin()">Логин<mat-icon>person_add_disabled</mat-icon></a>
+              <a mat-tab-link (click)="onLogin()">Для владельца<mat-icon>person_add_disabled</mat-icon></a>
           </nav>
         </div>
 
@@ -52,7 +52,7 @@
                       <div *ngIf="!(authState | async).authenticated">
                       <button mat-menu-item routerLink="/" (click)="onLogin()">
                           <mat-icon>exit_to_app</mat-icon>
-                          <span>Логин</span>
+                          <span>Для владельца</span>
                        </button>
                       </div>
 
@@ -67,7 +67,7 @@
 
               </mat-toolbar>
 
-
+              <!-- TOOL_BAR_ROW JUST TO HAVE BIGER SPACE FOR BUTTONS ON MOBILUE-->
               <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row>
 
           <mat-toolbar-row *ngIf="loginFormShow">
@@ -75,23 +75,25 @@
         <div>
 
           <form *ngIf="loginFormShow" [formGroup]="logInFrom" (ngSubmit)="onSignin()" >
-            <mat-form-field>
+            <mat-form-field style="margin-right: 15px">
                 
-                <input matInput  type="email" placeholder="e-mail" formControlName="email" id="email">
+                <input  matInput  type="email" placeholder="e-mail" formControlName="email" id="email">
             </mat-form-field>
 
             <br fxHide fxShow.lt-md>
-            <mat-form-field>
+
+            <mat-form-field style="margin-right: 15px">
             <input matInput  type="password" placeholder="Пароль" formControlName="password" id="password">
             </mat-form-field>
             
             
-            <button type="submit">Войти</button>
+            <button mat-raised-button color="primary" type="submit">Войти</button>
           </form>
         </div>
 
               </mat-toolbar-row>
 
+              <!--SECOND TOOL_BAR_ROW JUST TO HAVE BIGER SPACE FOR BUTTONS ON MOBILUE-->
               <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row>
 
 
