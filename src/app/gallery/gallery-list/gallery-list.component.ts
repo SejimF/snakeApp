@@ -16,6 +16,8 @@ export class GalleryListComponent implements OnInit {
   photoState: Observable<fromPhoto.State>;
   authState: Observable<fromAuth.State>
 
+  showSpinner: boolean = true;
+
   logdIn = false;
 
   constructor(private store: Store<fromApp.AppState>) { }

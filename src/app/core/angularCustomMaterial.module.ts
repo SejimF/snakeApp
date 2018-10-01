@@ -15,6 +15,7 @@ import {
 import { LayoutModule } from '@angular/cdk/layout';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -31,7 +32,8 @@ import {MatInputModule} from '@angular/material/input';
         MatCardModule,
         LayoutModule,
         FlexLayoutModule,
-        MatInputModule
+        MatInputModule,
+        MatProgressSpinnerModule
     ],
     exports: [
         MatMenuModule,
@@ -44,7 +46,8 @@ import {MatInputModule} from '@angular/material/input';
         MatCardModule,
         LayoutModule,
         FlexLayoutModule,
-        MatInputModule
+        MatInputModule,
+        MatProgressSpinnerModule
     ]
 })
 export class AngularCustomMaterialModule{}

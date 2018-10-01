@@ -1,0 +1,9 @@
+.mainContainer{
+    background-color: rgb(26, 21, 21);
+    text-align: center;
+    color: rgb(172, 172, 230);
+}
+
+.imgSocial {
+    max-width: 40px
+}

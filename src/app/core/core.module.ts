@@ -5,14 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from "../app-routing.module";
 import { AngularCustomMaterialModule } from "./angularCustomMaterial.module";
 import { MySnakesComponent } from './my-snakes/my-snakes.component';
-import { GalleryComponent } from "../gallery/gallery.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
     declarations: [
         HeaderComponent,
         HomeComponent,
-        MySnakesComponent
+        MySnakesComponent,
+        FooterComponent
 
     ],
     imports: [
@@ -23,7 +24,9 @@ import { ReactiveFormsModule } from "@angular/forms";
     ],
     exports: [
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        MySnakesComponent,
+        FooterComponent
     ]
 })
 export class CoreModule {}
