@@ -1,5 +1,6 @@
 
-        <mat-card *ngIf="!edit_mode">
+      
+      <mat-card class="mat-elevation-z6"  *ngIf="!edit_mode">
 
                 <mat-card-title>
                     <span *ngIf="!edit_mode">  {{ photo.title }} </span>
@@ -26,7 +27,7 @@
 
 
 
-        <mat-card *ngIf="edit_mode">
+        <mat-card class="mat-elevation-z10" *ngIf="edit_mode">
                 <form [formGroup]="photoForm" (ngSubmit)="submitNewPhoto()">
                           <mat-form-field>
                               <input matInput placeholder="Название" formControlName="title" [(ngModel)]="photo.title"  id="title" type="text">
