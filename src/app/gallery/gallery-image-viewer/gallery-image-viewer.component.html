@@ -1,0 +1,17 @@
+
+<div style="max-width: 98%; background-color: black; color:cyan">
+
+  
+
+  <div class="container">
+      <div><p>{{ (images$ | async).photos[imageIndex].title }}</p></div>
+       <img (click)="nextImage()" style="max-width: 98%" [src]="(images$ | async).photos[imageIndex].imageUrl" alt="(images$ | async).photos[imageIndex].description">
+       <div class="bottom-right"><mat-icon (click)="nextImage()" class="border">forward</mat-icon></div>
+       <div class="bottom-left" ><mat-icon (click)="prevImage()"  class="border">forward</mat-icon></div>
+       <div class="top-right"><mat-icon (click)="closeGallery()"  class="border">close</mat-icon></div>
+       <div><p>{{ (images$ | async).photos[imageIndex].description }}</p></div>
+  </div>
+
+</div>
+
+

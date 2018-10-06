@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as fromPhoto from '../store/gallery.reducers'
 import { Store } from '@ngrx/store';
-import { AngularFirestore } from '@angular/fire/firestore';
 import * as fromApp from '../../store/app.reducers'
 import * as fromAuth from '../../auth/store/auth.redux'
 
@@ -15,6 +14,7 @@ import * as fromAuth from '../../auth/store/auth.redux'
 export class GalleryListComponent implements OnInit {
   photoState: Observable<fromPhoto.State>;
   authState: Observable<fromAuth.State>
+  imageToShow: number;
 
   showSpinner: boolean = true;
 
@@ -26,6 +26,8 @@ export class GalleryListComponent implements OnInit {
     this.authState = this.store.select('auth');
     this.photoState = this.store.select('photos');
   }
+
+  
 
   logIn(){
     this.logdIn = !this.logdIn;
@@ -44,5 +46,10 @@ export class GalleryListComponent implements OnInit {
         return 100
       }
   }
+
+
+imagetoShow(index: number) {
+  console.log('image to show: ' + index)
+}
 
 }

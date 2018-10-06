@@ -10,6 +10,9 @@ import { GalleryAddPhotoComponent } from "./gallery-add-photo/gallery-add-photo.
 import { ReactiveFormsModule } from "@angular/forms";
 import { EffectsModule } from "@ngrx/effects";
 import { GalleryEffects } from "./store/gallery.effects";
+import { GalleryImageViewerComponent } from "./gallery-image-viewer/gallery-image-viewer.component";
+import { CommonModule } from "@angular/common";
+import { GalleryRouterModule } from "./gallery-routing.module";
 
 
 @NgModule({
@@ -17,18 +20,17 @@ import { GalleryEffects } from "./store/gallery.effects";
         GalleryComponent,
         GalleryItemComponent,
         GalleryListComponent,
-        GalleryAddPhotoComponent
+        GalleryAddPhotoComponent,
+        GalleryImageViewerComponent
     ],
     imports: [
+        CommonModule,
         SharedModule,
+        GalleryRouterModule,
         ReactiveFormsModule,
         AngularCustomMaterialModule,
         StoreModule.forFeature('photos', galleryReducer),
         EffectsModule.forFeature([GalleryEffects])
-    ],
-    exports: [
-        GalleryComponent,
-        GalleryItemComponent
     ]
 })
 export class GalleryModule{}

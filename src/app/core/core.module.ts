@@ -4,7 +4,6 @@ import { SharedModule } from "../shared/shared.module";
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from "../app-routing.module";
 import { AngularCustomMaterialModule } from "./angularCustomMaterial.module";
-import { MySnakesComponent } from './my-snakes/my-snakes.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./footer/footer.component";
 
@@ -12,7 +11,6 @@ import { FooterComponent } from "./footer/footer.component";
     declarations: [
         HeaderComponent,
         HomeComponent,
-        MySnakesComponent,
         FooterComponent
 
     ],
@@ -25,7 +23,6 @@ import { FooterComponent } from "./footer/footer.component";
     exports: [
         HeaderComponent,
         HomeComponent,
-        MySnakesComponent,
         FooterComponent
     ]
 })

@@ -25,21 +25,18 @@ import { AuthEffects } from './auth/store/auth.effects';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-
-    AppRoutingModule,
-    GalleryRouterModule,
     
-    GalleryModule,
     CoreModule,
     SharedModule,
 
     StoreModule.forRoot(reducers),
     StoreRootModule,
+    AppRoutingModule,
     EffectsModule.forRoot([AuthEffects]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

@@ -32,11 +32,11 @@ export class GalleryEffects {
                     actions.forEach( action => {    
                         try {
                             let id = action.payload.key;            // ID = KEY FROM DATABASE
-                            console.log(id);  
+                            // console.log(id);  
                             photos[counter].pushKey = id;
-                            console.log('success');
+                            // console.log('success');
                         } catch (error) {
-                            console.log('pushKey undefaind');
+                            // console.log('pushKey undefaind');
                             
                         }
   
@@ -45,7 +45,7 @@ export class GalleryEffects {
                                                         //INCREASING INDEX   
                     })
                 })
-                console.log(photos)
+                // console.log(photos)
                 return {
                     type: GalleryActions.SET_PHOTO,
                     payload: photos

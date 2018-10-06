@@ -1,14 +1,17 @@
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { MySnakesComponent } from "../core/my-snakes/my-snakes.component";
+import { GalleryImageViewerComponent } from "./gallery-image-viewer/gallery-image-viewer.component";
+import { GalleryComponent } from "./gallery.component";
 
-const appRoutes: Routes  = [
-    {path: 'gallery', component: MySnakesComponent},
-]
+const galleryRoutes: Routes  = [
+    {path: '', component: GalleryComponent, children: [
+        {path: ':id', component: GalleryImageViewerComponent}
+    ]},
+];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forChild(galleryRoutes)
     ],
     exports: [RouterModule]
 })

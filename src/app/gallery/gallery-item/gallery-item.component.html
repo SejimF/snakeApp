@@ -11,7 +11,7 @@
                 
                 </mat-card-title>
         
-            <img mat-card-image src="{{ photo.imageUrl }}" alt="{{ photo.title }}">
+            <img  mat-card-image src="{{ photo.imageUrl }}" alt="{{ photo.title }}" (click)="imageClicked()" [routerLink]="[imageIndex]">
         
             <mat-card-content>
                 {{ photo.description }}   
@@ -42,4 +42,5 @@
                         <button mat-raised-button color="primary"  type="submit"><mat-icon>done</mat-icon></button>
                       </form>
         </mat-card>
+
 
