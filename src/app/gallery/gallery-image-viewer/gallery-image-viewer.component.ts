@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromApp  from '../../store/app.reducers'
 import { Observable, Subscription } from 'rxjs';
@@ -11,18 +11,18 @@ import { Photo } from '../photo.model';
   templateUrl: './gallery-image-viewer.component.html',
   styleUrls: ['./gallery-image-viewer.component.css']
 })
-export class GalleryImageViewerComponent implements OnInit, OnChanges {
+export class GalleryImageViewerComponent implements OnInit, OnDestroy {
   images$: Observable<fromPhoto.State>;
   imageArrayLength: number;
   imageIndex : number;
   paramSubscriber: Subscription;
+  photoSubscriber: Subscription;
 
 
 
   constructor(private store: Store<fromPhoto.FeatureState>, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-
     this.paramSubscriber = this.route.params.subscribe(
       (params: Params) => {
         this.imageIndex = +params['id'];
@@ -30,18 +30,16 @@ export class GalleryImageViewerComponent implements OnInit, OnChanges {
       }
     )
 
-    this.store.select('photos').subscribe(result => {
+   this.photoSubscriber = this.store.select('photos').subscribe(result => {
       this.imageArrayLength = result.photos.length;
       // console.log(result.photos.length);
     })
 
-
-
   }
 
-  ngOnChanges(){
-
-
+  ngOnDestroy() {
+    this.paramSubscriber.unsubscribe();
+    this.photoSubscriber.unsubscribe();
   }
 
 nextImage() {

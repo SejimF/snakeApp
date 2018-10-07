@@ -20,6 +20,7 @@ export class GalleryItemComponent implements OnInit {
   authState: Observable<fromAuth.State>
   @Input()imageIndex: number;
   @Output()imageIndexSender = new EventEmitter<number>()
+  
 
   constructor(private store: Store<fromApp.AppState>) {}
 
@@ -49,7 +50,6 @@ export class GalleryItemComponent implements OnInit {
   imageClicked(){
     this.imageIndexSender.emit(this.imageIndex);
     console.log("clicked inside: " + this.imageIndex);
-    
   }
 
 }
