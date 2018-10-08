@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import 'hammerjs';
+
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { platformBrowser } from '@angular/platform-browser'
+
 import { AngularCustomMaterialModule } from './core/angularCustomMaterial.module';
-import { GalleryRouterModule } from './gallery/gallery-routing.module';
-import { GalleryModule } from './gallery/gallery.module';
 import { StoreModule, StoreRootModule } from '@ngrx/store';
 import { reducers } from './store/app.reducers';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,8 +33,10 @@ import { AuthEffects } from './auth/store/auth.effects';
     BrowserModule,
     HttpClientModule,
     
+    
     CoreModule,
     SharedModule,
+    
 
     StoreModule.forRoot(reducers),
     StoreRootModule,

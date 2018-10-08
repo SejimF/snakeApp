@@ -43,7 +43,7 @@
 
 /* The Modal (background) */
 .modal {
-    display: block; /* Hidden by default */
+    display: block;
     position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -61,7 +61,7 @@
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 700px;
+    max-width: 900px;
 }
 
 /* Caption of Modal Image */
@@ -76,8 +76,19 @@
     height: 150px;
 }
 
+#captionTitle {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 50px;
+}
+
 /* Add Animation */
-.modal-content, #caption {    
+.modal-content, #caption , #captionTitle{    
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -117,4 +128,6 @@
     .modal-content {
         width: 100%;
     }
+
+
 }

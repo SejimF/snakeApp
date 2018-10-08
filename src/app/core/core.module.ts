@@ -6,6 +6,7 @@ import { AppRoutingModule } from "../app-routing.module";
 import { AngularCustomMaterialModule } from "./angularCustomMaterial.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./footer/footer.component";
+import { platformBrowser } from "@angular/platform-browser";
 
 @NgModule({
     declarations: [

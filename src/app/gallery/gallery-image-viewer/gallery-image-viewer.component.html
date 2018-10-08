@@ -1,10 +1,13 @@
 
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="myModal" class="modal" (swipeleft)="nextImage()" (swiperight)="prevImage()" (tap)="closeGallery()">
   <span class="close" (click)="closeGallery()">×</span>
+  <div id="captionTitle">{{(images$ | async).photos[imageIndex].title}}</div>
   <img (click)="nextImage()" class="modal-content" id="img01" [src]="(images$ | async).photos[imageIndex].imageUrl">
   <div id="caption">{{(images$ | async).photos[imageIndex].description}}</div>
   <div class="bottom-left" ><mat-icon (click)="prevImage()"  class="border">forward</mat-icon></div>
   <div class="bottom-right"><mat-icon (click)="nextImage()" class="border">forward</mat-icon></div>  
+
+
 </div>
