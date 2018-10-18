@@ -29,14 +29,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.menuIcon = "more_vert";
     this.authState = this.store.select('auth');
+
+    
   }
 
   toggle_animation_state(){
     // this.mobile_nav_status = !this.mobile_nav_status;
     this.animation_state = this.animation_state === 'down' ? 'up' : 'down';
-    
-    
   }
+
+  
 
   onLogin() {
     this.loginFormShow = !this.loginFormShow;
