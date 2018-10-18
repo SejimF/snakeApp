@@ -61,7 +61,7 @@
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 900px;
+    max-width: 9    00px;
 }
 
 /* Caption of Modal Image */
@@ -108,7 +108,7 @@
 /* The Close Button */
 .close {
     position: absolute;
-    top: 15px;
+    top: 55px;
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;

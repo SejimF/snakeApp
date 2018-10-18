@@ -1,40 +1,74 @@
 
+<header class="main_header">
 
-<div  class="mat-elevation-z10">
-        <mat-toolbar >
+
+  <h1 class="main_header--h1">Полоз.сом</h1>
+  <nav>
+      <button class="toggle-button" (click)="toggle_animation_state()">
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+       </button>
+  </nav>
+
+
+</header>
+
+<!-- [class.active]="mobile_nav_status" -->
+<!-- [@dropDownUp]="animation_state" -->
+
+    <nav class="mobile_nav" [@dropDownUp]="animation_state">
+        <h1>Маисовый</h1>
+        <h2>полоз</h2>
+        <ul class="mobile_nav--items">
+          <li class="mobile_nav--item"> <a>Главная</a></li>
+          <li class="mobile_nav--item"> <a>Галерея</a></li>
+        </ul>
+       <div class="mobile_nav--close" (click)="toggle_animation_state()"> <div> Х </div> </div>
+
+    </nav>
+
+
+
+
+ <!-- <div  class="mat-elevation-z10">
+        <mat-toolbar > -->
+
                 <!-- Adding snake icon and first element -->
-                <span>
+
+                <!-- <span>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Snake_icon.svg" 
                     width="30" height="30" class="d-inline-block align-top" 
-                    alt=""> Полоз.Сом</span>
+                    alt=""> Полоз.Сом</span> -->
               
       <!-- TWO BUTTONS SHOWING ONLY ON THE BIG SCREENS -->
-      <nav mat-tab-nav-bar fxHide fxShow.gt-sm>
+      <!-- <nav mat-tab-nav-bar fxHide fxShow.gt-sm>
           <a mat-tab-link routerLink="/" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" [routerLinkActiveOptions]="{ exact: true }"  >Главная   <mat-icon>home</mat-icon></a>
           <a mat-tab-link routerLink="mysnakes" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive" >Мои Змеи<mat-icon>photo_album</mat-icon></a>
-      </nav >
+      </nav > -->
+
       <!-- SPACE TO MOVE LOGIN AND MENU BUTTON TO THE RIGHT -->
-      <div class="flex-spacer"></div>
+      <!-- <div class="flex-spacer"></div> -->
 
       <!-- LOGIN BUTTON -->
-      <div *ngIf="!(authState | async).authenticated" fxHide fxShow.gt-sm>
+      <!-- <div *ngIf="!(authState | async).authenticated" fxHide fxShow.gt-sm>
           <nav mat-tab-nav-bar >
               <a mat-tab-link (click)="onLogin()">Для владельца<mat-icon>person_add_disabled</mat-icon></a>
           </nav>
-        </div>
+        </div>  -->
 
         
 
 
 
       <!-- IF AUTHENTICATED IS TRUE, SHOW LOGOUT BUTTON -->
-      <div *ngIf="(authState | async).authenticated" fxHide fxShow.gt-sm>
+      <!-- <div *ngIf="(authState | async).authenticated" fxHide fxShow.gt-sm>
         <nav mat-tab-nav-bar>
             <a mat-tab-link routerLink="/" (click)="onLogout()" >Выйти<mat-icon>photo_album</mat-icon></a>
         </nav>
-      </div>
+      </div> -->
       <!-- DROPDOWN MENU FOR SMALL SCREENS -->
-      <div fxHide fxShow.lt-md >
+      <!-- <div fxHide fxShow.lt-md >
               <button mat-icon-button [matMenuTriggerFor]="menu">
                       <mat-icon>{{ menuIcon }}</mat-icon>
                     </button>
@@ -63,16 +97,16 @@
                                </button>
                       </div>
                     </mat-menu>
-      </div>
+      </div> -->
 
-              </mat-toolbar>
+              <!-- </mat-toolbar> -->
 
               <!-- TOOL_BAR_ROW JUST TO HAVE BIGER SPACE FOR BUTTONS ON MOBILUE-->
-              <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row>
+              <!-- <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row>
 
-          <mat-toolbar-row *ngIf="loginFormShow">
+          <mat-toolbar-row *ngIf="loginFormShow"> -->
         <!-- ON PRESS LOGIN BUTTON OPENING LOGIN FORM ON BIG SCREEN -->
-        <div>
+        <!-- <div>
 
           <form *ngIf="loginFormShow" [formGroup]="logInFrom" (ngSubmit)="onSignin()" >
             <mat-form-field style="margin-right: 15px">
@@ -89,15 +123,15 @@
             
             <button mat-raised-button color="primary" type="submit">Войти</button>
           </form>
-        </div>
+        </div> -->
 
-              </mat-toolbar-row>
+              <!-- </mat-toolbar-row> -->
 
               <!--SECOND TOOL_BAR_ROW JUST TO HAVE BIGER SPACE FOR BUTTONS ON MOBILUE-->
-              <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row>
+              <!-- <mat-toolbar-row fxHide fxShow.lt-md *ngIf="loginFormShow"></mat-toolbar-row> -->
 
 
 
               
-</div>
-
+<!-- </div> -->
+ 

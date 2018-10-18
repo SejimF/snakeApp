@@ -1,7 +1,24 @@
-.main_presentation {
-    padding: 1rem auto;
+.main_image--container {
+    background: linear-gradient(to top, rgba(3, 3, 3, 0.4) 10%, transparent ), url("../../../assets/DSC08900.JPG"), center/cover no-repeat border-box;
+    background-size: 108vh;
+    background-position: 80%;
+    width: 100vw;
+    height: 60vh;
+    position: relative;
 }
 
-.main_presentation_card {
-    max-width: 1000px;
+.main_image--header {
+    font-family: 'Pattaya', sans-serif;
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+    color: #FC7307;
+    text-shadow: 1px 2px 3px rgb(59, 45, 45), 0 0 1em rgb(0, 4, 255);
+}
+
+.main_image--first-word {
+    position: relative;
+    font-size: 3rem;
+    top: -30px;
+    text-shadow: 1px 2px 3px rgb(59, 45, 45), 0 0 1em rgb(0, 4, 255);
 }

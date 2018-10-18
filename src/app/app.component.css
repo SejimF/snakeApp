@@ -1,0 +1,11 @@
+main {
+    display: grid;
+    grid-template-columns: 100%;
+    position: relative;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    z-index: 10;
+}

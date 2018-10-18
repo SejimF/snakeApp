@@ -5,13 +5,19 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as fromAuth from '../../auth/store/auth.redux'
 import * as AuthActions from '../../auth/store/auth.actions'
+import { dropDownAnimation } from '../animations/animations'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  animations: [dropDownAnimation]
 })
 export class HeaderComponent implements OnInit {
+
+  // mobile_nav_status = false;
+  animation_state = 'up';
+
   login = true;
   menuIcon: string;
   logInFrom: FormGroup;
@@ -23,6 +29,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.menuIcon = "more_vert";
     this.authState = this.store.select('auth');
+  }
+
+  toggle_animation_state(){
+    // this.mobile_nav_status = !this.mobile_nav_status;
+    this.animation_state = this.animation_state === 'down' ? 'up' : 'down';
+    
+    
   }
 
   onLogin() {

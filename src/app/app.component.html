@@ -1,11 +1,23 @@
 
 <!-- Header element -->
-<app-header ></app-header >
+<main>
 
 
-<!-- Displaing element -->
-    <router-outlet></router-outlet>
+    <header>
+        <app-header ></app-header >
+    </header>
 
-      <app-footer></app-footer>
+
+    
+    
+    <!-- Displaing element -->
+    <div class="main_display--container">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="main_display--footer">
+        <app-footer ></app-footer>
+    </div>
+</main>
+
 
 
